@@ -1,12 +1,17 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 
 const Navbar = () => {
+  const userData = useSelector((state) =>  state.userData)
+  console.log('userData',userData)
   return (
     <div className="navbar bg-base-300 shadow-sm">
       <div className="flex-1">
         <a className="btn btn-ghost text-xl">👨‍💻DevTinder</a>
       </div>
-      <div className="flex gap-2">
+     { userData && <div className="flex gap-2">
+      <div className='flex justify-center'>
+        <h3>welcome {userData?.firstName}</h3>
         <div className="dropdown dropdown-end mx-5">
           <div
             tabIndex={0}
@@ -38,7 +43,8 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-      </div>
+        </div>
+      </div>}
     </div>
   )
 }

@@ -7,6 +7,7 @@ import Login from "./Component.tsx/Login";
 function App() {
   return (
     <div>
+      
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<BasePage />} >  //parentRoute
