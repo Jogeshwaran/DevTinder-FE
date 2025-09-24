@@ -10,6 +10,6 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     {/* <html data-theme="dark"></html> */}
     <App />
-  </StrictMode>,
+  </StrictMode>
   </Provider>
 )

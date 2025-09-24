@@ -17,6 +17,7 @@ const BasePage = () => {
     console.log(userData);
     
     const fetchUser = async()=> {
+        if(userData) return
         try {
         const res = await axios.get(BASE_URL + "/getProfile" , {withCredentials : true})
         console.log(res.data.data)
@@ -29,9 +30,7 @@ const BasePage = () => {
         }
     }
     useEffect(()=>{
-        if(!userData){
             fetchUser()
-        }
     },[])
     return(
         <div>
